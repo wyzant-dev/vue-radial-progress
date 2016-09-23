@@ -1,0 +1,6 @@
+node_modules
+mpm-debug.log
+.jshintignore
+.jshintrc
+dist/build.js
+dist/build.js.map

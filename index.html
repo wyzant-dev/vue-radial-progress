@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Radial Step Progress Demo</title>
+    <style>
+      #app {
+        width: 200px;
+      }
+      .controls {
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <radial-progress-bar :total-steps="totalSteps"
+                          :completed-steps="completedSteps">
+      </radial-progress-bar>
+      <div class="controls">
+        <button v-if="completedSteps > 0"
+                @click.prevent="prevStep">Prev</button>
+        <button v-if="completedSteps < totalSteps"
+                @click.prevent="nextStep">Next</button>
+      </div>
+    </div>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <script src="dist/build.js"></script>
+  </body>
+</html>
