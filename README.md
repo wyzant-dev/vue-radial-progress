@@ -62,6 +62,14 @@ Start color of the progress bar gradient. Default: `#bbff42`
 
 Stop color of the progress bar gradient. Default: `#429321`
 
+`strokeWidth`
+
+The width of the progress bar. Default: `10`
+
+`animateSpeed`
+
+The amount of time in milliseconds to animate one step. Default: `1000`
+
 # Lint
 
   > npm run lint
@@ -69,10 +77,6 @@ Stop color of the progress bar gradient. Default: `#429321`
 # Dev
 
   > npm run dev
-
-`strokeWidth`
-
-The width of the progress bar. Default: `10`
 
 # License
 

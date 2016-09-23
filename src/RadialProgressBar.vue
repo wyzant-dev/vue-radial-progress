@@ -76,6 +76,11 @@ export default {
       required: false,
       default: 10,
     },
+    animateSpeed: {
+      type: Number,
+      required: false,
+      default: 1000
+    }
   },
 
   data() {
@@ -122,6 +127,10 @@ export default {
       return this.innerCircleDiameter / 2;
     },
 
+    animationIncrements() {
+      return this.animateSpeed / 20;
+    },
+
     containerStyle() {
       return {
         height: `${this.diameter}px`,
@@ -135,6 +144,7 @@ export default {
         width: `${this.diameter}px`,
         strokeWidth: `${this.strokeWidth}px`,
         strokeDashoffset: this.strokeDashoffset,
+        transition: `stroke-dashoffset ${this.animateSpeed}ms linear`,
       };
     },
 
@@ -171,7 +181,7 @@ export default {
 
       const pct = ((100 - finishedPercentage) / 100) * this.circumference;
 
-      this.animateGradient(50, 1000, animateGradient);
+      this.animateGradient(animateGradient);
 
       this.strokeDashoffset = pct;
     },
@@ -196,7 +206,7 @@ export default {
       return { x, y };
     },
 
-    animateGradient(msIncrements, msTotal, isAnimate = true) {
+    animateGradient(isAnimate = true) {
       if (this.completedSteps === 0 || !isAnimate) {
         this.currentAngle = this.completedSteps * this.circleSlice;
 
@@ -207,7 +217,8 @@ export default {
         return;
       }
 
-      const totalPoints = msTotal / msIncrements;
+      let totalPoints = 20;
+
       let slice = this.circleSlice / totalPoints;
 
       let angleOffset = (this.completedSteps - 1) * this.circleSlice;
@@ -228,7 +239,7 @@ export default {
       let i = 0;
 
       this.gradientAnimation = setInterval(() => {
-        if (i === totalPoints) {
+        if (i >= totalPoints) {
           clearInterval(this.gradientAnimation);
           return;
         }
@@ -240,7 +251,7 @@ export default {
         this.gradient.fx = point.x;
         this.gradient.fy = point.y;
         i++;
-      }, msIncrements);
+      }, this.animationIncrements);
     },
   },
 
@@ -274,11 +285,5 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.radial-progress-bar {
-  circle {
-    transition: stroke-dashoffset 1s linear;
-  }
 }
 </style>

@@ -41,8 +41,10 @@
   <body>
     <h1>VueJS Radial Progress Bar</h1>
     <div id="app">
-      <radial-progress-bar :total-steps="totalSteps"
-                           :completed-steps="completedSteps">
+      <radial-progress-bar :diameter="200"
+                           :total-steps="totalSteps"
+                           :completed-steps="completedSteps"
+                           :animate-speed="1000">
         <p>Total steps: {{ totalSteps }}</p>
         <p>Completed steps: {{ completedSteps }}</p>
       </radial-progress-bar>
