@@ -62,6 +62,14 @@ Start color of the progress bar gradient. Default: `#bbff42`
 
 Stop color of the progress bar gradient. Default: `#429321`
 
+# Lint
+
+  > npm run lint
+
+# Dev
+
+  > npm run dev
+  
 # License
 
 [The MIT License](http://opensource.org/licenses/MIT)
