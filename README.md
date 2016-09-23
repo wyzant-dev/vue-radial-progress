@@ -4,7 +4,7 @@
 
 # Requirements
 
-- [Vue.js](https://github.com/vuejs/vue) `^1.0.0`
+- [Vue.js](https://github.com/vuejs/vue) `^1.0.26`
 - Module bundler: [webpack](https://github.com/webpack/webpack)
 
 # Installation
@@ -69,7 +69,7 @@ Stop color of the progress bar gradient. Default: `#429321`
 # Dev
 
   > npm run dev
-  
+
 # License
 
 [The MIT License](http://opensource.org/licenses/MIT)
