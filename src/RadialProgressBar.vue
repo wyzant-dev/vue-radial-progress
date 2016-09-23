@@ -23,7 +23,7 @@
               :cx="radius"
               :cy="radius"
               fill="transparent"
-              stroke="rgba(32, 32, 32, .5)"
+              :stroke="innerStrokeColor"
               :stroke-dasharray="circumference"
               stroke-dashoffset="0"
               stroke-linecap="round"
@@ -79,7 +79,12 @@ export default {
     animateSpeed: {
       type: Number,
       required: false,
-      default: 1000
+      default: 1000,
+    },
+    innerStrokeColor: {
+      type: String,
+      required: false,
+      default: '#323232',
     }
   },
 
@@ -217,7 +222,7 @@ export default {
         return;
       }
 
-      let totalPoints = 20;
+      const totalPoints = 20;
 
       let slice = this.circleSlice / totalPoints;
 
