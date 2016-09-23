@@ -24,9 +24,9 @@
               stroke="rgba(32, 32, 32, .5)"
               :stroke-dasharray="circumference"
               stroke-dashoffset="0"
-              stroke-linecap="round",
+              stroke-linecap="round"
               :style="strokeStyle"></circle>
-      <circle transform="rotate(270,100,100)"
+      <circle transform="rotate(270, {{ radius }}, {{ radius }})"
               :r="innerCircleRadius"
               :cx="radius"
               :cy="radius"
@@ -85,11 +85,9 @@ export default {
         cy: 0.5,
         r: 0.65,
       },
-      progressStyle: {
-        strokeDashoffset: 0,
-      },
       gradientAnimation: null,
       currentAngle: 0,
+      strokeDashoffset: 0,
     };
   },
 
@@ -126,12 +124,22 @@ export default {
       return {
         height: `${this.diameter}px`,
         width: `${this.diameter}px`,
+      };
+    },
+
+    progressStyle() {
+      return {
+        height: `${this.diameter}px`,
+        width: `${this.diameter}px`,
         strokeWidth: `${this.strokeWidth}px`,
+        strokeDashoffset: this.strokeDashoffset,
       };
     },
 
     strokeStyle() {
       return {
+        height: `${this.diameter}px`,
+        width: `${this.diameter}px`,
         strokeWidth: `${this.strokeWidth}px`,
       };
     },
@@ -157,7 +165,7 @@ export default {
 
       this.animateGradient(50, 1000, animateGradient);
 
-      this.progressStyle.strokeDashoffset = pct;
+      this.strokeDashoffset = pct;
     },
 
     getStopPointsOfCircle(steps) {
