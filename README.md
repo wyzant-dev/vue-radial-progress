@@ -18,8 +18,12 @@ $ npm install vue-progress-bar
 # Usage
 ``` html
 <template>
-  <radial-progress-bar :completed-steps="completedSteps"
-                       :total-steps="totalSteps"></radial-progress-bar>
+  <radial-progress-bar :diameter="200"
+                       :completed-steps="completedSteps"
+                       :total-steps="totalSteps">
+   <p>Total steps: {{ totalSteps }}</p>
+   <p>Completed steps: {{ completedSteps }}</p>
+  </radial-progress-bar>
 </template>
 
 <script>
