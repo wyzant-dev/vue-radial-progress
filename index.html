@@ -1,21 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Radial Step Progress Demo</title>
+    <title>VueJS Radial Progress Bar Demo</title>
     <style>
+      body {
+        background: #4e4f4f;
+        text-align: center;
+        color: #FFF;
+        font-family: Helvetica, Verdana, sans-serif;
+      }
       #app {
         width: 200px;
+        margin: 30px auto;
       }
       .controls {
         margin-top: 10px;
         text-align: center;
       }
+      .controls button {
+        border-radius: 5px;
+        color: #fff;
+        padding: 13px 20px;
+        background: #ff9f37;
+        border: 0;
+        outline: 0;
+        line-height: 1.3em;
+        font-size: 14px;
+        text-transform: uppercase;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+      .controls button:hover {
+        background: #ff9f37;
+      }
     </style>
   </head>
   <body>
+    <h1>VueJS Radial Progress Bar</h1>
     <div id="app">
       <radial-progress-bar :total-steps="totalSteps"
                            :completed-steps="completedSteps">
+        <!-- <p>Total steps: {{ totalSteps }}</p>
+        <p>Completed steps: {{ completedSteps }}</p> -->
       </radial-progress-bar>
       <div class="controls">
         <button v-if="completedSteps > 0"

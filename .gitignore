@@ -4,4 +4,4 @@ mpm-debug.log
 .jshintrc
 dist/build.js
 dist/build.js.map
-.tags
+.tags*
