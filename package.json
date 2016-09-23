@@ -1,7 +1,7 @@
 {
   "name": "vue-radial-progress",
   "version": "0.0.1",
-  "description": "A Vue Component that TODO",
+  "description": "A radial progress bar component for VueJS",
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",

@@ -7,7 +7,7 @@ config.entry = './src/index.js';
 config.output = {
   path: path.resolve(__dirname, './dist'),
   filename: 'build.min.js',
-  library: 'RadialStepLoader',
+  library: 'RadialProgressBar',
   libraryTarget: 'umd'
 }
 
