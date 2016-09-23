@@ -12,8 +12,8 @@
 ``` bash
 $ npm install vue-progress-bar
 ```
-# Demo
-[Demo](https://www.wyzant.com)
+# Live demo
+[Live Demo](https://wyzant-dev.github.io/vue-radial-progress/)
 
 # Usage
 ``` html
