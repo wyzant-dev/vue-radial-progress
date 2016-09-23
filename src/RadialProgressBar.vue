@@ -1,6 +1,8 @@
 <template>
   <div class="radial-progress-container" :style="containerStyle">
-    <slot></slot>
+    <div class="radial-progress-inner" :style="innerCircleStyle">
+      <slot></slot>
+    </div>
     <svg class="radial-progress-bar"
          :width="diameter"
          :height="diameter"
@@ -143,6 +145,12 @@ export default {
         strokeWidth: `${this.strokeWidth}px`,
       };
     },
+
+    innerCircleStyle() {
+      return {
+        width: `${this.innerCircleDiameter}px`,
+      };
+    }
   },
 
   methods: {
@@ -253,6 +261,19 @@ export default {
 <style lang="less" scoped>
 .radial-progress-container {
   position: relative;
+}
+
+.radial-progress-inner {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .radial-progress-bar {
