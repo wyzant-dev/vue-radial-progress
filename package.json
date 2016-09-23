@@ -4,7 +4,6 @@
   "description": "A Vue Component that TODO",
   "main": "src/index.js",
   "scripts": {
-    "test": "open demo.html",
     "dev": "webpack-dev-server --inline --hot --quiet",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.build.js",
     "lint": "eslint --ext .js,.vue src"

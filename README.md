@@ -4,7 +4,7 @@
 
 # Requirements
 
-- [Vue.js](https://github.com/vuejs/vue) `^1.0.0`
+- [Vue.js](https://github.com/vuejs/vue) `^1.0.26`
 - Module bundler: [webpack](https://github.com/webpack/webpack)
 
 # Installation
@@ -12,8 +12,8 @@
 ``` bash
 $ npm install vue-progress-bar
 ```
-# Demo
-[Demo](https://www.wyzant.com)
+# Live demo
+[Live Demo](https://wyzant-dev.github.io/vue-radial-progress/)
 
 # Usage
 ``` html
@@ -61,6 +61,14 @@ Start color of the progress bar gradient. Default: `#bbff42`
 `stopColor`
 
 Stop color of the progress bar gradient. Default: `#429321`
+
+# Lint
+
+  > npm run lint
+
+# Dev
+
+  > npm run dev
 
 `strokeWidth`
 
