@@ -4,7 +4,6 @@
     <svg class="radial-progress-bar"
          :width="diameter"
          :height="diameter"
-         viewPort="0 0 100 100"
          version="1.1"
          xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -18,22 +17,23 @@
           <stop offset="100%" :stop-color="stopColor"/>
         </radialGradient>
       </defs>
-      <circle r="90"
-              cx="100"
-              cy="100"
+      <circle :r="innerCircleRadius"
+              :cx="radius"
+              :cy="radius"
               fill="transparent"
               stroke="rgba(32, 32, 32, .5)"
-              stroke-dasharray="565.48"
+              :stroke-dasharray="circumference"
               stroke-dashoffset="0"
-              stroke-linecap="round"></circle>
+              stroke-linecap="round",
+              :style="strokeStyle"></circle>
       <circle transform="rotate(270,100,100)"
-              r="90"
-              cx="100"
-              cy="100"
+              :r="innerCircleRadius"
+              :cx="radius"
+              :cy="radius"
               fill="transparent"
               stroke="url(#radial-gradient)"
-              stroke-dasharray="565.48"
-              stroke-dashoffset="565.48"
+              :stroke-dasharray="circumference"
+              :stroke-dashoffset="circumference"
               stroke-linecap="round"
               :style="progressStyle"></circle>
     </svg>
@@ -62,13 +62,18 @@ export default {
     startColor: {
       type: String,
       required: false,
-      default: '#bbff42'
+      default: '#bbff42',
     },
     stopColor: {
       type: String,
       required: false,
-      default: '#429321'
-    }
+      default: '#429321',
+    },
+    strokeWidth: {
+      type: Number,
+      required: false,
+      default: 10,
+    },
   },
 
   data() {
@@ -93,6 +98,10 @@ export default {
       return this.diameter / 2;
     },
 
+    circumference() {
+      return Math.PI * this.innerCircleDiameter;
+    },
+
     stepSize() {
       return 100 / this.totalSteps;
     },
@@ -105,32 +114,46 @@ export default {
       return 2 * Math.PI / this.totalSteps;
     },
 
+    innerCircleDiameter() {
+      return this.diameter - (this.strokeWidth * 2);
+    },
+
+    innerCircleRadius() {
+      return this.innerCircleDiameter / 2;
+    },
+
     containerStyle() {
       return {
-        height: this.diameter + 'px',
-        width: this.diameter + 'px',
-      }
-    }
+        height: `${this.diameter}px`,
+        width: `${this.diameter}px`,
+        strokeWidth: `${this.strokeWidth}px`,
+      };
+    },
+
+    strokeStyle() {
+      return {
+        strokeWidth: `${this.strokeWidth}px`,
+      };
+    },
   },
 
   methods: {
     changeProgress(animateGradient = false) {
-      let val = this.finishedPercentage;
-      const circumference = Math.PI * (this.diameter);
+      let finishedPercentage = this.finishedPercentage;
 
-      if (isNaN(val)) {
-        val = 100;
+      if (isNaN(finishedPercentage)) {
+        finishedPercentage = 100;
       }
 
-      if (val < 0) {
-        val = 0;
+      if (finishedPercentage < 0) {
+        finishedPercentage = 0;
       }
 
-      if (val > 100) {
-        val = 100;
+      if (finishedPercentage > 100) {
+        finishedPercentage = 100;
       }
 
-      const pct = ((100 - val) / 100) * circumference;
+      const pct = ((100 - finishedPercentage) / 100) * this.circumference;
 
       this.animateGradient(50, 1000, animateGradient);
 
@@ -139,6 +162,7 @@ export default {
 
     getStopPointsOfCircle(steps) {
       const points = [];
+
       for (let i = 0; i < steps; i++) {
         const angle = this.circleSlice * i;
         points.push(this.getPointOfCircle(angle));
@@ -205,8 +229,6 @@ export default {
   },
 
   ready() {
-    this.progressStyle.strokeDashoffset = 565.48;
-
     this.changeProgress();
 
     this.$watch('totalSteps', () => {

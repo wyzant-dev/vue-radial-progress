@@ -62,6 +62,10 @@ Start color of the progress bar gradient. Default: `#bbff42`
 
 Stop color of the progress bar gradient. Default: `#429321`
 
+`strokeWidth`
+
+The width of the progress bar. Default: `10`
+
 # License
 
 [The MIT License](http://opensource.org/licenses/MIT)
