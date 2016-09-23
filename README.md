@@ -2,7 +2,6 @@
 
 > A radial progress bar component for Vue.js.
 
-# Live demo
 [Live Demo](https://wyzant-dev.github.io/vue-radial-progress/)
 
 # Requirements
