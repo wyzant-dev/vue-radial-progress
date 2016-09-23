@@ -250,7 +250,6 @@ export default {
 .radial-progress-bar {
   circle {
     transition: stroke-dashoffset 1s linear;
-    stroke-width: 12px;
   }
 }
 </style>
