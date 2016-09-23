@@ -1,39 +1,42 @@
 <template>
-  <div>
-    <div class="progress-container spc-med-s">
-      <slot></slot>
-      <svg id="svg" width="200" height="200" viewPort="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#05a" />
-            <stop offset="100%" stop-color="#0a5" />
-          </linearGradient>
-          <radialGradient id="MyGradient" :fx="gradient.fx" :fy="gradient.fy" :cx="gradient.cx" :cy="gradient.cy" :r="gradient.r">
-            <stop offset="30%" stop-color="#bbff42"/>
-            <stop offset="100%" stop-color="#429321"/>
-          </radialGradient>
-        </defs>
-        <circle r="90"
-                cx="100"
-                cy="100"
-                fill="transparent"
-                stroke="rgba(32, 32, 32, .5)"
-                stroke-dasharray="565.48"
-                stroke-dashoffset="0"
-                stroke-linecap="round"></circle>
-        <circle id="bar"
-                transform="rotate(270,100,100)"
-                :r="radius"
-                cx="100"
-                cy="100"
-                fill="transparent"
-                stroke="url(#MyGradient)"
-                stroke-dasharray="565.48"
-                stroke-dashoffset="565.48"
-                stroke-linecap="round"
-                :style="progressStyle"></circle>
-      </svg>
-    </div>
+  <div class="radial-progress-container" :style="containerStyle">
+    <slot></slot>
+    <svg class="radial-progress-bar"
+         :width="diameter"
+         :height="diameter"
+         viewPort="0 0 100 100"
+         version="1.1"
+         xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="radial-gradient"
+                        :fx="gradient.fx"
+                        :fy="gradient.fy"
+                        :cx="gradient.cx"
+                        :cy="gradient.cy"
+                        :r="gradient.r">
+          <stop offset="30%" :stop-color="startColor"/>
+          <stop offset="100%" :stop-color="stopColor"/>
+        </radialGradient>
+      </defs>
+      <circle r="90"
+              cx="100"
+              cy="100"
+              fill="transparent"
+              stroke="rgba(32, 32, 32, .5)"
+              stroke-dasharray="565.48"
+              stroke-dashoffset="0"
+              stroke-linecap="round"></circle>
+      <circle transform="rotate(270,100,100)"
+              r="90"
+              cx="100"
+              cy="100"
+              fill="transparent"
+              stroke="url(#radial-gradient)"
+              stroke-dasharray="565.48"
+              stroke-dashoffset="565.48"
+              stroke-linecap="round"
+              :style="progressStyle"></circle>
+    </svg>
   </div>
 </template>
 
@@ -44,7 +47,7 @@ export default {
     diameter: {
       type: Number,
       required: false,
-      default: 180,
+      default: 200,
     },
     totalSteps: {
       type: Number,
@@ -54,8 +57,18 @@ export default {
     completedSteps: {
       type: Number,
       required: true,
-      default: 2,
+      default: 0,
     },
+    startColor: {
+      type: String,
+      required: false,
+      default: '#bbff42'
+    },
+    stopColor: {
+      type: String,
+      required: false,
+      default: '#429321'
+    }
   },
 
   data() {
@@ -67,15 +80,8 @@ export default {
         cy: 0.5,
         r: 0.65,
       },
-      dashOffset: 0,
       progressStyle: {
         strokeDashoffset: 0,
-      },
-      circle: {
-        center: {
-          x: 0.5,
-          y: 0.5,
-        },
       },
       gradientAnimation: null,
       currentAngle: 0,
@@ -98,6 +104,13 @@ export default {
     circleSlice() {
       return 2 * Math.PI / this.totalSteps;
     },
+
+    containerStyle() {
+      return {
+        height: this.diameter + 'px',
+        width: this.diameter + 'px',
+      }
+    }
   },
 
   methods: {
@@ -208,58 +221,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.progress-container {
-  width: 200px;
-  height: 200px;
+.radial-progress-container {
   position: relative;
 }
 
-.progress-text {
-  position: absolute;
-  width: 180px;
-  top: 55px;
-  left: 10px;
-
-  p {
-    margin: 0;
-  }
-}
-
-#svg {
+.radial-progress-bar {
   circle {
-    stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear;
     stroke-width: 12px;
   }
-}
-
-#cont {
-  display: block;
-  height: 200px;
-  width: 200px;
-  margin: 2em auto;
-  border-radius: 100%;
-  position: relative;
-
-  &:after {
-    position: absolute;
-    display: block;
-    height: 160px;
-    width: 160px;
-    left: 50%;
-    top: 50%;
-    margin-top: -80px;
-    margin-left: -80px;
-    border-radius: 100%;
-    line-height: 160px;
-    font-size: 2em;
-    text-shadow: 0 0 0.5em black;
-  }
-}
-
-.do-search {
-  text-decoration: underline;
-  display: block;
-  margin: 0 auto;
 }
 </style>
