@@ -1,14 +1,13 @@
 var config = require('./webpack.config.js');
 var path = require('path');
 
-config.entry = './src/index.js';
-
+config.entry = './src/main.js';
 
 config.output = {
-  path: path.resolve(__dirname, './dist'),
-  filename: 'build.min.js',
+  filename: './dist/build.min.js',
   library: 'RadialProgressBar',
-  libraryTarget: 'umd'
+  libraryTarget: 'umd',
+  umdNamedDefine: true
 }
 
 module.exports = config

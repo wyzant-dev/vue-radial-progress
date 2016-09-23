@@ -37,6 +37,8 @@
         margin: 5px 0;
       }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+
   </head>
   <body>
     <h1>VueJS Radial Progress Bar</h1>
@@ -55,7 +57,32 @@
                 @click.prevent="nextStep">Next</button>
       </div>
     </div>
-  <script src="node_modules/vue/dist/vue.js"></script>
-  <script src="dist/build.js"></script>
+    <!-- <script src="node_modules/vue/dist/vue.js"></script> -->
+    <script src="dist/build.min.js"></script>
+
+    <script>
+      Vue.config.debug = true;
+
+      new Vue({
+        el: '#app',
+        components: {
+          RadialProgressBar: RadialProgressBar,
+        },
+        data() {
+          return {
+            completedSteps: 1,
+            totalSteps: 6
+          }
+        },
+        methods: {
+          nextStep() {
+            this.completedSteps += 1;
+          },
+          prevStep() {
+            this.completedSteps -= 1;
+          }
+        },
+      });
+    </script>
   </body>
 </html>
