@@ -12,7 +12,7 @@
 # Installation
 
 ``` bash
-$ npm install vue-progress-bar
+$ npm install vue-radial-progress
 ```
 
 # Usage
