@@ -28,7 +28,7 @@
               stroke-dashoffset="0"
               stroke-linecap="round"
               :style="strokeStyle"></circle>
-      <circle transform="rotate(270, {{ radius }}, {{ radius }})"
+      <circle :transform="'rotate(270, ' + radius + ',' + radius + ')'"
               :r="innerCircleRadius"
               :cx="radius"
               :cy="radius"
