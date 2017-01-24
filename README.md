@@ -6,7 +6,7 @@
 
 # Requirements
 
-- [Vue.js](https://github.com/vuejs/vue) `^1.0.26`
+- [Vue.js](https://github.com/vuejs/vue) `^1.0.0` (Compatible with Vue 1.0 or 2.0)
 - Module bundler: [webpack](https://github.com/webpack/webpack)
 
 # Installation
