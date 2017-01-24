@@ -1,5 +1,5 @@
 node_modules
-mpm-debug.log
+*.log
 .jshintignore
 .jshintrc
 dist/build.js

@@ -260,7 +260,7 @@ export default {
     },
   },
 
-  ready() {
+  created() {
     this.changeProgress();
 
     this.$watch('totalSteps', () => {
