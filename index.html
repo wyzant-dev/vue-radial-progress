@@ -101,9 +101,9 @@
           <p>Completed steps: {{ completedSteps }}</p>
         </radial-progress-bar>
         <div class="controls">
-          <button :class="{ 'visible-collapse': completedSteps <= 0 }"
+          <button :disabled="completedSteps <= 0"
                   @click.prevent="prevStep">Prev</button>
-          <button :class="{ 'visible-collapse': completedSteps >= totalSteps }"
+          <button :disabled="completedSteps >= totalSteps"
                   @click.prevent="nextStep">Next</button>
         </div>
       </div>

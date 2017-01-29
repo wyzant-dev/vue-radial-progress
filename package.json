@@ -29,6 +29,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
+    "vue": "^1.0.0",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^8.2.1",
