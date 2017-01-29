@@ -47,7 +47,7 @@ export default {
 # Props
 
 Name | Default value | Description
----|---|---
+---|:---:|---
 `diameter` | `200` | Diameter of the progress bar circle in pixels.
 `totalSteps` | `10` | Total number of steps to complete progress bar.
 `completedSteps` | `0` | Number of completed steps in the progress bar.
@@ -57,7 +57,7 @@ Name | Default value | Description
 `strokeWidth` | `10` | The width of the progress bar.
 `animateSpeed` | `1000` | The amount of time in milliseconds to animate one step.
 `fps` | `60` | The frames per second that the animation should run.
-`timing-func` | `linear` | The transition timing function to use for the CSS transition. See [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function).
+`timingFunc` | `linear` | The transition timing function to use for the CSS transition. See [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function).
 
 # Lint
 
