@@ -1,6 +1,6 @@
 # vue-radial-progress [![npm package](https://img.shields.io/npm/v/vue-radial-progress.svg)](https://www.npmjs.com/package/vue-radial-progress)
 
-> A radial progress bar component for Vue.js.
+> A radial progress bar component for Vue.js. Uses SVG and javascript to animate a radial progress bar with a gradient.
 
 [Live Demo](https://wyzant-dev.github.io/vue-radial-progress/)
 
@@ -27,10 +27,10 @@ $ npm install vue-radial-progress
 </template>
 
 <script>
-import RadialProgressBar from 'vue-radial-progress';
+import RadialProgressBar from 'vue-radial-progress'
 
 export default {
-  data() {
+  data () {
     return {
       completedSteps: 0,
       totalSteps: 10
