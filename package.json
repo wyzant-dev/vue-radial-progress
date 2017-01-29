@@ -1,11 +1,11 @@
 {
   "name": "vue-radial-progress",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A radial progress bar component for Vue.js",
   "main": "src/main.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.build.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "lint": "eslint --ext .js,.vue src"
   },
   "repository": {
@@ -49,7 +49,7 @@
     "radial progress",
     "radial progress bar"
   ],
-  "author": "jrenton@gmail.com",
+  "author": "jrenton87@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wyzant-dev/vue-radial-progress/issues"

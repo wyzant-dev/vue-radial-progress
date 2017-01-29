@@ -78,6 +78,10 @@ The width of the progress bar. Default: `10`
 
 The amount of time in milliseconds to animate one step. Default: `1000`
 
+`fps`
+
+The frames per second that the animation should run. Default: `60`
+
 # Lint
 
   > npm run lint

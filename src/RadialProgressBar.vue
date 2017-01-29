@@ -117,6 +117,10 @@ export default {
     },
 
     stepSize () {
+      if (this.totalSteps === 0) {
+        return 0
+      }
+
       return 100 / this.totalSteps
     },
 
@@ -212,39 +216,15 @@ export default {
       this.gradient.fy = point.y
     },
 
-    changeProgress (animateGradient = true) {
-      let finishedPercentage = this.finishedPercentage
+    changeProgress ({ isAnimate = true }) {
+      this.strokeDashoffset = ((100 - this.finishedPercentage) / 100) * this.circumference
 
-      if (isNaN(finishedPercentage) ||
-          finishedPercentage > 100) {
-        finishedPercentage = 100
-      }
-
-      if (finishedPercentage < 0) {
-        finishedPercentage = 0
-      }
-
-      const pct = ((100 - finishedPercentage) / 100) * this.circumference
-
-      this.animateGradient(animateGradient)
-
-      this.strokeDashoffset = pct
-    },
-
-    /**
-     * We need to recalculate the radial gradient if
-     * a gradient exists.
-     */
-    animateGradient (isAnimate = true) {
-      // Stop any current running transitions.
       if (this.gradientAnimation) {
         clearInterval(this.gradientAnimation)
       }
 
-      if (!isAnimate || !this.hasGradient) {
-        this.currentAngle = this.completedSteps * this.circleSlice
-        this.gotoPoint()
-
+      if (!isAnimate) {
+        this.gotoNextStep()
         return
       }
 
@@ -265,21 +245,34 @@ export default {
 
         i += isMoveForward ? incrementer : -incrementer
       }, this.animationIncrements)
+    },
+
+    gotoNextStep () {
+      this.currentAngle = this.completedSteps * this.circleSlice
+      this.gotoPoint()
     }
   },
 
   watch: {
     totalSteps () {
-      this.changeProgress()
+      this.changeProgress({ isAnimate: true })
     },
 
     completedSteps () {
-      this.changeProgress()
+      this.changeProgress({ isAnimate: true })
+    },
+
+    diameter () {
+      this.changeProgress({ isAnimate: true })
+    },
+
+    strokeWidth () {
+      this.changeProgress({ isAnimate: true })
     }
   },
 
   created () {
-    this.changeProgress(false)
+    this.changeProgress({ isAnimate: false })
   }
 }
 </script>
@@ -294,7 +287,6 @@ export default {
   top: 0; right: 0; bottom: 0; left: 0;
   position: absolute;
   border-radius: 50%;
-  z-index: -1;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
