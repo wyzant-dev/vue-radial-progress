@@ -1,6 +1,6 @@
 {
   "name": "vue-radial-progress",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A radial progress bar component for Vue.js",
   "main": "src/main.js",
   "scripts": {

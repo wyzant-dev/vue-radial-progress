@@ -96,7 +96,8 @@
                             :stroke-width="strokeWidth"
                             :start-color="startColor"
                             :stop-color="stopColor"
-                            :inner-stroke-color="innerStrokeColor">
+                            :inner-stroke-color="innerStrokeColor"
+                            :timing-func="timingFunc">
           <p>Total steps: {{ totalSteps }}</p>
           <p>Completed steps: {{ completedSteps }}</p>
         </radial-progress-bar>
@@ -142,6 +143,14 @@
         </tr>
         <tr>
           <td>
+            <label for="timing-function">Timing function</label>
+          </td>
+          <td>
+            <input id="timing-function" type="text" placeholder="Timing function" :value="timingFunc" @input="timingFuncChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
             <label for="start-color">Start color</label>
           </td>
           <td>
@@ -167,7 +176,7 @@
       </div>
     </table>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.min.js"></script>
-    <script src="./dist/build.min.js"></script>
+    <script src="./dist/vue-radial-progress.min.js"></script>
 
     <script>
       Vue.config.debug = true
@@ -186,12 +195,17 @@
             strokeWidth: 10,
             startColor: '#bbff42',
             stopColor: '#429321',
-            innerStrokeColor: '#323232'
+            innerStrokeColor: '#323232',
+            timingFunc: 'linear'
           }
         },
         methods: {
+          timingFuncChanged(e) {
+            this.timingFunc = e.target.value
+          },
+
           innerStrokeColorChanged (e) {
-            this.innerStrokeColor = e.target.value;
+            this.innerStrokeColor = e.target.value
           },
 
           stopColorChanged (e) {

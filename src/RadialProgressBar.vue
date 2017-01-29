@@ -89,6 +89,11 @@ export default {
       type: Number,
       required: false,
       default: 60
+    },
+    timingFunc: {
+      type: String,
+      required: false,
+      default: 'linear'
     }
   },
 
@@ -169,7 +174,7 @@ export default {
         width: `${this.diameter}px`,
         strokeWidth: `${this.strokeWidth}px`,
         strokeDashoffset: this.strokeDashoffset,
-        transition: `stroke-dashoffset ${this.animateSpeed}ms linear`
+        transition: `stroke-dashoffset ${this.animateSpeed}ms ${this.timingFunc}`
       }
     },
 
