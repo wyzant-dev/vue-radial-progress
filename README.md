@@ -88,4 +88,4 @@ The amount of time in milliseconds to animate one step. Default: `1000`
 
 # License
 
-[The MIT License](http://opensource.org/licenses/MIT)
+[The MIT License](LICENSE)
