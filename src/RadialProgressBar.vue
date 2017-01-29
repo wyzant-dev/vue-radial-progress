@@ -277,7 +277,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style>
 .radial-progress-container {
   position: relative;
 }

@@ -1,6 +1,6 @@
 {
   "name": "vue-radial-progress",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "description": "A radial progress bar component for Vue.js",
   "main": "src/main.js",
   "scripts": {
@@ -11,9 +11,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wyzant-dev/vue-radial-progress"
-  },
-  "dependencies": {
-    "vue": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
