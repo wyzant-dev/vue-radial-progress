@@ -1,8 +1,8 @@
 {
   "name": "vue-radial-progress",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A radial progress bar component for Vue.js",
-  "main": "src/main.js",
+  "main": "dist/vue-radial-progress.min.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
