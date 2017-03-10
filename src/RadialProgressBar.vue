@@ -9,7 +9,7 @@
          version="1.1"
          xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="radial-gradient"
+        <radialGradient :id="'radial-gradient' + _uid"
                         :fx="gradient.fx"
                         :fy="gradient.fy"
                         :cx="gradient.cx"
@@ -33,7 +33,7 @@
               :cx="radius"
               :cy="radius"
               fill="transparent"
-              stroke="url(#radial-gradient)"
+              :stroke="'url(#radial-gradient' + _uid + ')'"
               :stroke-dasharray="circumference"
               :stroke-dashoffset="circumference"
               stroke-linecap="round"
