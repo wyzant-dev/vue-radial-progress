@@ -54,6 +54,7 @@ Name | Default value | Description
 `startColor` | `#bbff42` | The color of the leading edge of the progress bar gradient.
 `stopColor` | `#429321` | The secondary color of the progress bar gradient.
 `innerStrokeColor` | `#323232` | Background color of the progress bar.
+`innerStrokeWidth` | `10` | The inner stroke width of the progress bar.
 `strokeWidth` | `10` | The width of the progress bar.
 `animateSpeed` | `1000` | The amount of time in milliseconds to animate one step.
 `fps` | `60` | The frames per second that the animation should run.

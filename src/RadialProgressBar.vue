@@ -27,7 +27,7 @@
               :stroke-dasharray="circumference"
               stroke-dashoffset="0"
               stroke-linecap="round"
-              :style="strokeStyle"></circle>
+              :style="innerStrokeStyle"></circle>
       <circle :transform="'rotate(270, ' + radius + ',' + radius + ')'"
               :r="innerCircleRadius"
               :cx="radius"
@@ -74,6 +74,11 @@ export default {
       type: Number,
       required: false,
       default: 10
+    },
+    innerStrokeWidth: {
+      type: Number,
+      required: false,
+      default: 5
     },
     animateSpeed: {
       type: Number,
@@ -183,6 +188,14 @@ export default {
         height: `${this.diameter}px`,
         width: `${this.diameter}px`,
         strokeWidth: `${this.strokeWidth}px`
+      }
+    },
+
+    innerStrokeStyle () {
+      return {
+        height: `${this.diameter}px`,
+        width: `${this.diameter}px`,
+        strokeWidth: `${this.innerStrokeWidth}px`
       }
     },
 
