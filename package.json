@@ -29,7 +29,7 @@
   },
   "scripts": {
     "dev": "vue-cli-service serve src/main.js",
-    "build": "vue-cli-service build --target lib --name radial-progress-bar build.js",
+    "build": "vue-cli-service build --target lib --name radial-progress-bar build.js && rm dist/demo.html",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
