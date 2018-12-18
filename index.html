@@ -179,12 +179,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./dist/radial-progress-bar.umd.min.js"></script>
     <script>
-      Vue.use(window.RadialProgressBar)
-      Vue.component('radial-progress-bar', window.RadialProgressBar);
-
       new Vue({
+        el: '#app',
         components: {
-          'radial-progress-bar': window.RadialProgressBar
+          'radial-progress-bar': RadialProgressBar
         },
         data () {
           return {
@@ -266,7 +264,7 @@
             this.completedSteps -= 1
           }
         }
-      }).$mount('#app');
+      });
     </script>
   </body>
 </html>
