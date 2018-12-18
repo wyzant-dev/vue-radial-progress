@@ -73,6 +73,7 @@
       }
     </style>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="./dist/radial-progress-bar.css" rel="stylesheet">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body>
@@ -173,18 +174,15 @@
             <input id="inner-stroke-color" type="color" placeholder="Inner stroke color" :value="innerStrokeColor" @input="innerStrokeColorChanged">
           </td>
         </tr>
-      </div>
-    </table>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.min.js"></script>
-    <script src="./dist/vue-radial-progress.min.js"></script>
-
+      </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./dist/radial-progress-bar.umd.min.js"></script>
     <script>
-      Vue.config.debug = true
-
       new Vue({
         el: '#app',
         components: {
-          RadialProgressBar: RadialProgressBar,
+          'radial-progress-bar': RadialProgressBar
         },
         data () {
           return {
@@ -266,7 +264,7 @@
             this.completedSteps -= 1
           }
         }
-      })
+      });
     </script>
   </body>
 </html>

@@ -1,12 +1,15 @@
 module.exports = {
   root: true,
+  env: {
+    node: true
+  },
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
+    parser: 'babel-eslint'
   },
 
-  extends: 'standard',
-  // required to lint *.vue files
-  plugins: [
-    'html'
+  extends: [
+    "plugin:vue/essential",
+    "eslint:recommended"
   ]
 }
