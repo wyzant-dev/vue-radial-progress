@@ -78,7 +78,7 @@ export default {
     strokeLinecap: {
       type: String,
       required: false,
-      default 'round'
+      default: 'round'
     },
     animateSpeed: {
       type: Number,
