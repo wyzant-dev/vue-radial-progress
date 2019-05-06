@@ -26,7 +26,7 @@
               :stroke="innerStrokeColor"
               :stroke-dasharray="circumference"
               stroke-dashoffset="0"
-              stroke-linecap="round"
+              :stroke-linecap="strokeLinecap"
               :style="strokeStyle"></circle>
       <circle :transform="'rotate(270, ' + radius + ',' + radius + ')'"
               :r="innerCircleRadius"
@@ -36,7 +36,7 @@
               :stroke="'url(#radial-gradient' + _uid + ')'"
               :stroke-dasharray="circumference"
               :stroke-dashoffset="circumference"
-              stroke-linecap="round"
+              :stroke-linecap="strokeLinecap"
               :style="progressStyle"></circle>
     </svg>
   </div>
@@ -74,6 +74,11 @@ export default {
       type: Number,
       required: false,
       default: 10
+    },
+    strokeLinecap: {
+      type: String,
+      required: false,
+      default 'round'
     },
     animateSpeed: {
       type: Number,
