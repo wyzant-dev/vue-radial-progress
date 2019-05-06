@@ -55,6 +55,7 @@ Name | Default value | Description
 `stopColor` | `#429321` | The secondary color of the progress bar gradient.
 `innerStrokeColor` | `#323232` | Background color of the progress bar.
 `strokeWidth` | `10` | The width of the progress bar.
+`strokeLinecap` | `round` | The type of stroke linecap for circle.
 `animateSpeed` | `1000` | The amount of time in milliseconds to animate one step.
 `fps` | `60` | The frames per second that the animation should run.
 `timingFunc` | `linear` | The transition timing function to use for the CSS transition. See [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function).
