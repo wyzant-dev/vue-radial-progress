@@ -1,0 +1,290 @@
+[33mcommit 2260f18270a10ea573b798174e41c4019322b325[m[33m ([m[1;36mHEAD -> [m[1;32mfeatures/start-animation[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 962781a 73d9553
+Author: Justus Renton <jrenton87@gmail.com>
+Date:   Tue Apr 24 10:34:04 2018 -0500
+
+    Merge pull request #11 from baezor/master
+    
+    Updated .babelrc preset
+
+[33mcommit 73d95531aba376d57cae72d6ae4500cc01fff46e[m
+Author: Angel Baez <angel@ktbo.mx>
+Date:   Mon Mar 5 11:25:04 2018 -0600
+
+    Updated .babelrc preset
+
+[33mcommit 962781a56ccd67e5c516c23c4c2588c2a493475b[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Mar 10 11:43:56 2017 -0600
+
+    make radial gradients unique to each component
+
+[33mcommit c23a06deef258dd17f21f08cca9f0f0189e86d1c[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Thu Mar 9 14:45:59 2017 -0600
+
+    do not reference min file directly
+
+[33mcommit c02c711b26e237c3e841c0d1062fc3aacd0e010e[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Thu Mar 9 14:42:19 2017 -0600
+
+    reference min file directly
+
+[33mcommit 3ac678be85576200931b2723a725a024e5e20048[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 08:25:53 2017 -0600
+
+    fix func name
+
+[33mcommit 67597087662125b802acd6176a2c84b3f1500f6f[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 08:22:45 2017 -0600
+
+    add timing function prop
+
+[33mcommit b376e780cf6d92ba3c4bbcabb1784e2d6fcbbf45[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 07:41:30 2017 -0600
+
+    add vue to dev depedencies
+
+[33mcommit 50b566c47ca3609f245d41bde7cea668f7fadf92[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 07:08:05 2017 -0600
+
+    remove dependency on vue and less
+
+[33mcommit e07a64e4ccc06feb024e713a4df4b15493bcbb23[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 06:23:36 2017 -0600
+
+    add fps to readme, improve demo, and refactor code
+
+[33mcommit c185ea2e39ae606f00956bb6d5adb6f8b4c4e65b[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 04:29:22 2017 -0600
+
+    code cleanup
+
+[33mcommit 0e9aa7e8b73a46f5ff772d5737c269bb3d284922[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 04:17:30 2017 -0600
+
+    fix index file
+
+[33mcommit 20695dec3830f0ea9a2228cf587ddda6103813a1[m
+Author: Justus <jrenton87@gmail.com>
+Date:   Sun Jan 29 03:41:45 2017 -0600
+
+    switch to js standard and fix animation calculations
+
+[33mcommit bb19f9115468dfd2ad0683154b868c8143e3cff6[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Tue Jan 24 11:30:50 2017 -0600
+
+    update readme
+
+[33mcommit f0538bc3656240aade3fad8387bfd32693034761[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Tue Jan 24 11:25:15 2017 -0600
+
+    bump version
+
+[33mcommit 65275de791a63456bf28be9c796cb9f86bcdedc8[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Tue Jan 24 11:23:59 2017 -0600
+
+    update for vue 2.0
+
+[33mcommit e28845634ad45382ab9d575a182290009e0f18f7[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Wed Oct 12 17:56:26 2016 -0500
+
+    fix main and issue with css transform
+
+[33mcommit 9d64ac923fc0761485c691901f1a80522e38edb9[m
+Merge: aa5228e 74e4ce1
+Author: Justus Renton <jrenton87@gmail.com>
+Date:   Tue Oct 4 13:33:44 2016 -0500
+
+    Merge pull request #1 from dalehille/patch-1
+    
+    Update README.md
+
+[33mcommit 74e4ce1a266b39db1b33bd7bb70193c45b7c1607[m
+Author: Dale Hille <dalehille@gmail.com>
+Date:   Tue Oct 4 14:19:03 2016 -0400
+
+    Update README.md
+
+[33mcommit aa5228e49243bc5873e3b17de3b1a1c610296e80[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 17:07:39 2016 -0500
+
+    add inner stroke color
+
+[33mcommit 5e0ecb99b3957ba4a0eedd3bc5fe37329151d0ac[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 16:05:16 2016 -0500
+
+    Update webpack conf.
+
+[33mcommit 857367d823baf78623f003272c0de5062f1d8570[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:59:21 2016 -0500
+
+    Udpate README.
+
+[33mcommit 3a0ae4c99e9886b5ee4b57cb3c20b12e6fbe944f[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:59:08 2016 -0500
+
+    Udpate README.
+
+[33mcommit 742fb7a8e9045149d3cdd462cd03a75053496e9b[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:57:47 2016 -0500
+
+    Udpate README.
+
+[33mcommit adba7cfd542bd5f7e4274a7650f8f42b12049227[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:54:01 2016 -0500
+
+    Fix index.html for dev env and bump version.
+
+[33mcommit 70f6db7e5a35411ca5c1b3c7cd0b6fd12c3cb297[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:47:14 2016 -0500
+
+    Bump version to 0.1.0
+
+[33mcommit 25848159ea50ed64a800713b07f537f4b9b2efb9[m
+Merge: 630e93f 8eb401c
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:46:42 2016 -0500
+
+    Update index (github page)
+
+[33mcommit 8eb401c585cd8ad6db09b7827b3e1bcb7ecfe985[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 15:44:31 2016 -0500
+
+    Update defaults.
+
+[33mcommit c32256e210053188c4cd97ca60daa030b8766612[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 14:35:17 2016 -0500
+
+    Demo github page.
+
+[33mcommit 630e93f54d4640a7bc0bc20bff0fb632e430e892[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 15:32:50 2016 -0500
+
+    add more keywords
+
+[33mcommit 52ed8b0f7183d879edfc67d34f686103b6e47d44[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 15:26:00 2016 -0500
+
+    increment version
+
+[33mcommit 097e007582442f56c02fabd68a5b3120a43aa6bc[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 15:24:47 2016 -0500
+
+    fix npm description
+
+[33mcommit 99a1f18ff9003bf30d02b5c9a050bea1897f4f9c[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 15:14:35 2016 -0500
+
+    add animation speed
+
+[33mcommit b9fd05c2f8a89ee7c902e5b11ba9316a06928844[m
+Merge: 4ac39ce 6d3ecec
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 14:55:04 2016 -0500
+
+    Merge branch 'master' of https://github.com/wyzant-dev/vue-radial-progress
+
+[33mcommit 4ac39cee9b95cba57b581681d86a2c4d6463c60d[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 14:54:52 2016 -0500
+
+    center content in circle
+
+[33mcommit 6d3ececb6654530e33a3a194a858cdbc81f75d0c[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 14:33:45 2016 -0500
+
+    Github page.
+
+[33mcommit f9ec0ac26db6217f4c92e42e4a0593831ddf0192[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 14:31:51 2016 -0500
+
+    Github page.
+
+[33mcommit c5bfe09315ae3b8052cf7eab6f99629a91277e17[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 14:26:36 2016 -0500
+
+    fix progress circle rotate
+
+[33mcommit fe5c6388ebb4629f263480afe40587ba950e635e[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 14:11:33 2016 -0500
+
+    fix radial width
+
+[33mcommit 94dfa7d37415951ca57cd172d90de7fe323d33f5[m
+Merge: 74ad363 7ba24ab
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 14:10:06 2016 -0500
+
+    merge master into master
+
+[33mcommit 74ad363ff870fbe60a9471962de2082127ac8412[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 14:08:43 2016 -0500
+
+    fix width calculations
+
+[33mcommit 7ba24ab2461bbb9f9d3f2a26d7f48942910596c2[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 13:55:07 2016 -0500
+
+    Github page.
+
+[33mcommit 5a7488f8ef5480baf1327282c28d3949c4be886a[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 13:30:59 2016 -0500
+
+    style demo page
+
+[33mcommit 92895536053f93235da4df77da38d5575a74e383[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 13:24:50 2016 -0500
+
+    Update README.
+
+[33mcommit 47d93cdaee899cc1cbcda93a3e0349680fa82319[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 13:24:08 2016 -0500
+
+    Update README.
+
+[33mcommit c35b36aafe6890c8263f7f531086c8cd06948a9d[m
+Author: jrenton <jrenton@wyzant.com>
+Date:   Fri Sep 23 13:15:49 2016 -0500
+
+    cleaned up code and edited readme
+
+[33mcommit c020f2d2211513c645474264af2eb28698d3e925[m
+Author: gtappero <gtappero@wyzant.com>
+Date:   Fri Sep 23 11:51:52 2016 -0500
+
+    Initial commit.

@@ -45,6 +45,11 @@
 <script>
 export default {
   props: {
+    startAnimate: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
     diameter: {
       type: Number,
       required: false,
@@ -108,7 +113,7 @@ export default {
       },
       gradientAnimation: null,
       currentAngle: 0,
-      strokeDashoffset: 0
+      strokeDashoffset: null
     }
   },
 
@@ -277,7 +282,11 @@ export default {
   },
 
   created () {
-    this.changeProgress({ isAnimate: false })
+    if (this.startAnimate == true) {
+      setTimeout(() => this.changeProgress({ isAnimate: false }), 1);
+    } else (
+      this.changeProgress({ isAnimate: false })
+    )
   }
 }
 </script>
