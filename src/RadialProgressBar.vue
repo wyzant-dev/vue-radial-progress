@@ -7,7 +7,7 @@
          :width="diameter"
          :height="diameter"
          version="1.1"
-         :viewBox="`0 0 ${this.diameter} ${this.diameter}`"
+         :viewBox="`0 0 ${diameter} ${diameter}`"
          xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient :id="'radial-gradient' + _uid"
