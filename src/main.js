@@ -1,1 +1,1 @@
-module.exports = require('./RadialProgressBar.vue')
+module.exports = require('./RadialProgressBar.vue').default
