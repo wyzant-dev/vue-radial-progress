@@ -44,17 +44,18 @@ module.exports = {
 }
 module.exports.devtool = 'true'
 
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = false
-  module.exports.optimization = {}
+  module.exports.optimization = { minimize: true }
   module.exports.optimization.minimizer = (module.exports.optimization.minimizer || []).concat([
-    new UglifyJsPlugin({
+    new TerserPlugin({
       cache: true,
+      extractComments: /@extract/i,
       parallel: true,
-      uglifyOptions: {
-        compress: false,
+      terserOptions: {
+        compress: {},
         ecma: 6,
         mangle: true
       },

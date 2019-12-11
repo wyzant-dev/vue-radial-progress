@@ -1,6 +1,6 @@
 {
   "name": "vue-radial-progress",
-  "version": "0.2.10",
+  "version": "0.3.0",
   "description": "A radial progress bar component for Vue.js",
   "main": "src/main.js",
   "scripts": {
@@ -33,10 +33,9 @@
     "eslint-plugin-standard": "^4.0.1",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "terser-webpack-plugin": "^2.2.3",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.4",
-    "vue-html-loader": "^1.0.0",
     "vue-loader": "^15.7.2",
     "vue-style-loader": "^4.1.2",
     "webpack": "^4.41.2",
