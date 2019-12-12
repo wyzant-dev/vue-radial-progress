@@ -2,7 +2,7 @@
 
 > A radial progress bar component for Vue.js. Uses SVG and javascript to animate a radial progress bar with a gradient.
 
-[Live Demo](https://wyzant-dev.github.io/vue-radial-progress/)
+[Live Demo](https://wyzantinc.github.io/vue-radial-progress/)
 
 # Requirements
 
