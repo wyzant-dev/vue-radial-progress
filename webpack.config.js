@@ -44,7 +44,7 @@ module.exports = {
 }
 module.exports.devtool = 'true'
 
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = false
