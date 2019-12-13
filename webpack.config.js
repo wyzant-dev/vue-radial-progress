@@ -1,5 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path')
+const webpack = require('webpack')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -13,35 +14,59 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
       }
     ]
   },
-  devtool: '#eval-source-map'
+  plugins: [
+    new VueLoaderPlugin()
+  ],
+  devtool: '#eval-source-map',
+  mode: 'development'
 }
+module.exports.devtool = 'true'
+
+const TerserPlugin = require('terser-webpack-plugin')
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = false
+  module.exports.optimization = { minimize: true }
+  module.exports.optimization.minimizer = (module.exports.optimization.minimizer || []).concat([
+    new TerserPlugin({
+      cache: true,
+      extractComments: /@extract/i,
+      parallel: true,
+      terserOptions: {
+        compress: {},
+        ecma: 6,
+        mangle: true
+      },
+      sourceMap: true
+    })
+  ])
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      sourceMap: false
-    }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    })
   ])
 }
