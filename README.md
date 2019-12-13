@@ -59,6 +59,7 @@ Name | Default value | Description
 `animateSpeed` | `1000` | The amount of time in milliseconds to animate one step.
 `fps` | `60` | The frames per second that the animation should run.
 `timingFunc` | `linear` | The transition timing function to use for the CSS transition. See [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function).
+`isClockwise` | `true` | Controls the direction of the progress bar.
 
 # Lint
 

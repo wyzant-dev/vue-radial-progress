@@ -94,10 +94,12 @@
                             :completed-steps="completedSteps"
                             :animate-speed="animateSpeed"
                             :stroke-width="strokeWidth"
+                            :stroke-linecap="strokeLinecap"
                             :start-color="startColor"
                             :stop-color="stopColor"
                             :inner-stroke-color="innerStrokeColor"
-                            :timing-func="timingFunc">
+                            :timing-func="timingFunc"
+                            :is-clockwise="isClockwise">
           <p>Total steps: {{ totalSteps }}</p>
           <p>Completed steps: {{ completedSteps }}</p>
         </radial-progress-bar>
@@ -173,6 +175,14 @@
             <input id="inner-stroke-color" type="color" placeholder="Inner stroke color" :value="innerStrokeColor" @input="innerStrokeColorChanged">
           </td>
         </tr>
+        <tr>
+          <td>
+            <label for="clockwise">Clockwise</label>
+          </td>
+          <td>
+            <input id="clockwise" type="checkbox" :checked="isClockwise" @input="isClockwiseChanged" />
+          </td>
+        </tr>
       </table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
@@ -193,13 +203,19 @@
             animateSpeed: 1000,
             diameter: 300,
             strokeWidth: 10,
+            strokeLinecap: 'round',
             startColor: '#bbff42',
             stopColor: '#429321',
             innerStrokeColor: '#323232',
-            timingFunc: 'linear'
+            timingFunc: 'linear',
+            isClockwise: false
           }
         },
         methods: {
+          isClockwiseChanged(e) {
+            this.isClockwise = e.target.checked
+          },
+
           timingFuncChanged(e) {
             this.timingFunc = e.target.value
           },
