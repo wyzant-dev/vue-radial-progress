@@ -222,8 +222,10 @@ export default {
     gotoPoint () {
       const point = this.getPointOfCircle(this.currentAngle)
 
-      this.gradient.fx = point.x
-      this.gradient.fy = point.y
+      if (point.x && point.y) {
+        this.gradient.fx = point.x
+        this.gradient.fy = point.y
+      }
     },
 
     changeProgress ({ isAnimate = true }) {
