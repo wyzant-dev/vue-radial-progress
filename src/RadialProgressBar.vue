@@ -99,6 +99,11 @@ export default {
       type: String,
       required: false,
       default: 'linear'
+    },
+    isClockwise: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
 
@@ -195,7 +200,7 @@ export default {
       return {
         width: `${this.innerCircleDiameter}px`
       }
-    }
+    },
   },
 
   methods: {
@@ -226,8 +231,15 @@ export default {
       this.gradient.fy = point.y
     },
 
+    direction () {
+      if (this.isClockwise) {
+        return 1
+      }
+      return -1
+    },
+
     changeProgress ({ isAnimate = true }) {
-      this.strokeDashoffset = ((100 - this.finishedPercentage) / 100) * this.circumference
+      this.strokeDashoffset = ((100 - this.finishedPercentage) / 100) * this.circumference * this.direction()
 
       if (this.gradientAnimation) {
         clearInterval(this.gradientAnimation)
