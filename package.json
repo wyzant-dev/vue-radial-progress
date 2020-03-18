@@ -16,7 +16,7 @@
     "@babel/core": "^7.7.5",
     "@babel/plugin-transform-runtime": "^7.7.6",
     "@babel/preset-env": "^7.7.4",
-    "acorn": "^7.1.0",
+    "acorn": "^7.1.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-runtime": "^6.0.0",
