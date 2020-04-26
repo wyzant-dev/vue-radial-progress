@@ -94,6 +94,7 @@
                             :completed-steps="completedSteps"
                             :animate-speed="animateSpeed"
                             :stroke-width="strokeWidth"
+                            :inner-stroke-width="innerStrokeWidth"
                             :stroke-linecap="strokeLinecap"
                             :start-color="startColor"
                             :stop-color="stopColor"
@@ -141,6 +142,14 @@
           </td>
           <td>
             <input id="stroke-width" type="number" placeholder="Stroke width" :value="strokeWidth" @input="strokeWidthChanged">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="stroke-width">Inner Stoke width</label>
+          </td>
+          <td>
+            <input id="inner-stroke-width" type="number" placeholder="Inner Stroke width" :value="innerStrokeWidth" @input="innerStrokeWidthChanged">
           </td>
         </tr>
         <tr>
@@ -203,6 +212,7 @@
             animateSpeed: 1000,
             diameter: 300,
             strokeWidth: 10,
+            innerStrokeWidth: 10,
             strokeLinecap: 'round',
             startColor: '#bbff42',
             stopColor: '#429321',
@@ -241,6 +251,17 @@
             }
 
             this.strokeWidth = parseInt(val)
+          },
+
+          innerStrokeWidthChanged (e) {
+            e.preventDefault()
+            const val = e.target.value
+
+            if (!val || isNaN(val)) {
+              return false
+            }
+
+            this.innerStrokeWidth = parseInt(val)
           },
 
           diameterChanged (e) {
