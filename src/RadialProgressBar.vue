@@ -75,6 +75,11 @@ export default {
       required: false,
       default: 10
     },
+    innerStrokeWidth: {
+      type: Number,
+      required: false,
+      default: 10
+    },
     strokeLinecap: {
       type: String,
       required: false,
@@ -152,7 +157,7 @@ export default {
     },
 
     innerCircleDiameter () {
-      return this.diameter - (this.strokeWidth * 2)
+      return this.diameter - (this.innerStrokeWidth * 2)
     },
 
     innerCircleRadius () {
@@ -192,7 +197,7 @@ export default {
       return {
         height: `${this.diameter}px`,
         width: `${this.diameter}px`,
-        strokeWidth: `${this.strokeWidth}px`
+        strokeWidth: `${this.innerStrokeWidth}px`
       }
     },
 
