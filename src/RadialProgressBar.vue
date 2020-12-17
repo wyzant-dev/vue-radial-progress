@@ -28,7 +28,7 @@
               stroke-dashoffset="0"
               :stroke-linecap="strokeLinecap"
               :style="strokeStyle"></circle>
-      <circle :transform="'rotate(270, ' + radius + ',' + radius + ')'"
+      <circle :transform="'rotate(' + startRadial + ', ' + radius + ',' + radius + ')'"
               :r="innerCircleRadius"
               :cx="radius"
               :cy="radius"
@@ -109,6 +109,11 @@ export default {
       type: Boolean,
       required: false,
       default: true
+    },
+    startRadial: {
+      type: Number,
+      required: false,
+      default: 270
     }
   },
 
