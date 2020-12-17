@@ -100,6 +100,7 @@
                             :stop-color="stopColor"
                             :inner-stroke-color="innerStrokeColor"
                             :timing-func="timingFunc"
+                            :start-radial="startRadial"
                             :is-clockwise="isClockwise">
           <p>Total steps: {{ totalSteps }}</p>
           <p>Completed steps: {{ completedSteps }}</p>
@@ -161,6 +162,14 @@
           </td>
         </tr>
         <tr>
+            <td>
+                <label for="inner-stroke-color">Start radial</label>
+            </td>
+            <td>
+                <input id="start-radial" type="number" placeholder="Start radial" :value="startRadial" @input="startRadialChanged">
+            </td>
+        </tr>
+        <tr>
           <td>
             <label for="start-color">Start color</label>
           </td>
@@ -218,7 +227,8 @@
             stopColor: '#429321',
             innerStrokeColor: '#323232',
             timingFunc: 'linear',
-            isClockwise: true
+            isClockwise: true,
+            startRadial: 270
           }
         },
         methods: {
@@ -301,6 +311,16 @@
           },
           prevStep () {
             this.completedSteps -= 1
+          },
+          startRadialChanged(e) {
+            e.preventDefault()
+            const val = e.target.value
+
+            if (!val || isNaN(val)) {
+              return false
+            }
+
+            this.startRadial = parseInt(val)
           }
         }
       })
