@@ -100,7 +100,8 @@
                             :stop-color="stopColor"
                             :inner-stroke-color="innerStrokeColor"
                             :timing-func="timingFunc"
-                            :is-clockwise="isClockwise">
+                            :is-clockwise="isClockwise"
+                            :is-indeterminate="isIndeterminate">
           <p>Total steps: {{ totalSteps }}</p>
           <p>Completed steps: {{ completedSteps }}</p>
         </radial-progress-bar>
@@ -192,6 +193,14 @@
             <input id="clockwise" type="checkbox" :checked="isClockwise" @input="isClockwiseChanged" />
           </td>
         </tr>
+        <tr>
+          <td>
+            <label for="indeterminate">Indeterminate</label>
+          </td>
+          <td>
+            <input id="indeterminate" type="checkbox" :checked="isIndeterminate" @input="isIndeterminateChanged" />
+          </td>
+        </tr>
       </table>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
@@ -218,12 +227,16 @@
             stopColor: '#429321',
             innerStrokeColor: '#323232',
             timingFunc: 'linear',
-            isClockwise: true
+            isClockwise: true,
+            isIndeterminate: false,
           }
         },
         methods: {
           isClockwiseChanged(e) {
             this.isClockwise = e.target.checked
+          },
+          isIndeterminateChanged(e) {
+            this.isIndeterminate = e.target.checked
           },
 
           timingFuncChanged(e) {
