@@ -61,6 +61,7 @@ Name | Default value | Description
 `fps` | `60` | The frames per second that the animation should run.
 `timingFunc` | `linear` | The transition timing function to use for the CSS transition. See [transition-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function).
 `isClockwise` | `true` | Controls the direction of the progress bar.
+`isIndeterminate` | `false` | Set to indeterminate state.
 
 # Lint
 
