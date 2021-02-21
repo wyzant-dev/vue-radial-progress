@@ -4,6 +4,8 @@
       <slot></slot>
     </div>
     <svg class="radial-progress-bar"
+         :class="{ 'radial-progress-bar--indeterminate': isIndeterminate }"
+         :style="{'animation-duration': isIndeterminate ? animateSpeed + 'ms' : null}"
          :width="diameter"
          :height="diameter"
          version="1.1"
@@ -109,7 +111,12 @@ export default {
       type: Boolean,
       required: false,
       default: true
-    }
+    },
+    isIndeterminate: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 
   data () {
@@ -321,5 +328,17 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@keyframes RadialProgressBarIndeterminateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.radial-progress-bar--indeterminate {
+  animation-name: RadialProgressBarIndeterminateAnimation;
+  animation-iteration-count: infinite;
 }
 </style>
